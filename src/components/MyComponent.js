@@ -2,7 +2,6 @@
 // function component
 import React from "react";
 
-
 class MyComponent extends React.Component {
 
     state = {
@@ -13,7 +12,15 @@ class MyComponent extends React.Component {
 
     handleClick(event) {
         console.log("Click Me");
-        console.log("My name is ", this.state.name);
+        console.log("My name is", this.state.name);
+
+        // merge State => react class
+        this.setState({
+            name: 'Eric',
+            age: Math.floor((Math.random()*100)+1)
+            // address: 'Hoi Dan IT,
+            // age: 26
+        });
     }
 
     handleOnMouseOver(event) {
@@ -24,9 +31,9 @@ class MyComponent extends React.Component {
     render() {
         return(
             <div>
-                My name is {this.state.name} and I'm from {this.state.address}
+                My name is {this.state.name} and I'm {this.state.age}
                 <button onMouseOver={this.handleOnMouseOver}>Hover Me</button>
-                <button onClick={this.handleClick}>Click Me</button>
+                <button onClick={(event) => {this.handleClick(event)}}>Click Me</button>
             </div>
         );
     };
