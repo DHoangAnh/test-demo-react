@@ -18,9 +18,11 @@ class DisplayInfor extends React.Component {
         // destructuring array/object
         const { listUsers } = this.props;
         // props => properties
+
+        // template + logic js
         return(
             <div className="display-infor-container">
-                <img src={logo} />
+                {/* <img src={logo} /> */}
                 <div>
                     <span onClick={() => {this.handleShowHide()}}>
                         {this.state.isShowListUser === true ? "Hide list users:" : "Show list users:"}
@@ -34,8 +36,13 @@ class DisplayInfor extends React.Component {
                             
                             return(
                                 <div key={user.id} className={+user.age > 18 ? "green" : "red"}>
-                                    <div>My name is {user.name}</div>
-                                    <div>My age is {user.age}</div>
+                                    <div>
+                                        <div>My name is {user.name}</div>
+                                        <div>My age is {user.age}</div>
+                                    </div>
+                                    <div>
+                                        <button onClick={() => {this.props.handleDeleteNewUser(user.id)}}>Delete</button>
+                                    </div>
                                     <hr />
                                 </div>
                             );
