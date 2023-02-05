@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './DisplayInfor.scss';
 import logo from './../logo.svg';
 // stateless
@@ -41,11 +41,29 @@ import logo from './../logo.svg';
 const DisplayInfor = (props) => {
     const { listUsers } = props;
 
+    const [isShowHideListUser, setShowHideListUser] = useState(true);
+    // Destructuring assignment
+
+    // this.state = {
+    //     isShowHideListUser: true
+    // }
+
+    const handleShowHideListUser = () => {
+        // this.setState = {
+        //     isShowHideListUser: true
+        // }
+        setShowHideListUser(!isShowHideListUser)
+    }
+
     return(
         <div className="display-infor-container">
-
+            <div>
+                <span onClick={() => handleShowHideListUser()}>
+                    {isShowHideListUser === true ? 'Hide List User' : 'Show List User'}
+                </span>
+            </div>
             {
-                true &&
+                isShowHideListUser &&
                 <>
                     { listUsers.map((user) => {
                         
