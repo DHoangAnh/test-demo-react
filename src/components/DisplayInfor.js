@@ -52,7 +52,7 @@ const DisplayInfor = (props) => {
         // this.setState = {
         //     isShowHideListUser: true
         // }
-        setShowHideListUser(!isShowHideListUser)
+        setShowHideListUser(!isShowHideListUser);
     }
 
     return(
