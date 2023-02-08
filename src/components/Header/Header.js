@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Hỏi Dân IT</Navbar.Brand>
+        <NavLink className="navbar-brand" to="/">Hỏi Dân IT</NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -18,11 +18,9 @@ const Header = () => {
           </Nav>
           <Nav>
             <NavDropdown title="Settings" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Log In</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Log Out
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
+                <NavDropdown.Item >Log In</NavDropdown.Item>
+                <NavDropdown.Item >Log Out</NavDropdown.Item>
+                <NavDropdown.Item >Profile</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
